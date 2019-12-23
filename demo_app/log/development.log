@@ -1,0 +1,1922 @@
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (18.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (14.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20190924094646)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190924094646"]]
+  [1m[35m (14.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-09-24 09:47:10.232279"], ["updated_at", "2019-09-24 09:47:10.232279"]]
+  [1m[35m (10.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2019-09-24 16:47:26 +0700
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/tuan/.rvm/gems/ruby-2.6.3/gems/railties-6.0.0/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/tuan/.rvm/gems/ruby-2.6.3/gems/railties-6.0.0/lib/rails/templates/rails/welcome/index.html.erb (Duration: 6.4ms | Allocations: 478)
+Completed 200 OK in 23ms (Views: 12.1ms | ActiveRecord: 0.0ms | Allocations: 2726)
+
+
+Started GET "/demo2" for ::1 at 2019-09-24 16:47:31 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/demo2"):
+  
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.0.7) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2019-09-24 16:50:31 +0700
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/tuan/.rvm/gems/ruby-2.6.3/gems/railties-6.0.0/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/tuan/.rvm/gems/ruby-2.6.3/gems/railties-6.0.0/lib/rails/templates/rails/welcome/index.html.erb (Duration: 5.0ms | Allocations: 315)
+Completed 200 OK in 12ms (Views: 6.3ms | ActiveRecord: 0.0ms | Allocations: 1702)
+
+
+Started GET "/users" for ::1 at 2019-09-24 16:50:38 +0700
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:15
+  Rendered users/index.html.erb within layouts/application (Duration: 4.2ms | Allocations: 1285)
+[Webpacker] Compiling…
+Started GET "/users" for ::1 at 2019-09-24 16:50:41 +0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:15
+  Rendered users/index.html.erb within layouts/application (Duration: 6.0ms | Allocations: 642)
+[Webpacker] Compiling…
+[Webpacker] Compiled all packs in /home/tuan/demo2/public/packs
+Completed 200 OK in 4656ms (Views: 4651.9ms | ActiveRecord: 0.8ms | Allocations: 1273330)
+
+
+[Webpacker] Compiled all packs in /home/tuan/demo2/public/packs
+Completed 200 OK in 2655ms (Views: 2654.2ms | ActiveRecord: 0.3ms | Allocations: 8695)
+
+
+Started GET "/users/new" for ::1 at 2019-09-24 16:50:53 +0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 45.8ms | Allocations: 6805)
+  Rendered users/new.html.erb within layouts/application (Duration: 49.5ms | Allocations: 7163)
+Completed 200 OK in 84ms (Views: 57.8ms | ActiveRecord: 1.6ms | Allocations: 15516)
+
+
+Started GET "/app" for ::1 at 2019-09-24 16:50:59 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/app"):
+  
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.0.7) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/users/new" for ::1 at 2019-09-24 16:52:23 +0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 2.4ms | Allocations: 731)
+  Rendered users/new.html.erb within layouts/application (Duration: 2.8ms | Allocations: 818)
+Completed 200 OK in 14ms (Views: 13.0ms | ActiveRecord: 0.0ms | Allocations: 6117)
+
+
+Started POST "/users" for ::1 at 2019-09-24 16:52:36 +0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"aIRnVR9vT0s1RcIEVs/WX93TcQBKc4G6tx1jz3oWsk1eGf2t4fYEwX7kDtXzidczxnENoqYpKEOh/6a5JyUNSw==", "user"=>{"name"=>"tuanmom", "email"=>"tuanm@gmail.com"}, "commit"=>"Create User"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:30:in `block in create'
+  [1m[36mUser Create (1.1ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "tuanmom"], ["email", "tuanm@gmail.com"], ["created_at", "2019-09-24 09:52:36.565486"], ["updated_at", "2019-09-24 09:52:36.565486"]]
+  ↳ app/controllers/users_controller.rb:30:in `block in create'
+  [1m[35m (13.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:30:in `block in create'
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 37ms (ActiveRecord: 15.1ms | Allocations: 3684)
+
+
+Started GET "/users/1" for ::1 at 2019-09-24 16:52:36 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:67:in `set_user'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 4.7ms | Allocations: 277)
+Completed 200 OK in 48ms (Views: 27.4ms | ActiveRecord: 1.1ms | Allocations: 6763)
+
+
+Started GET "/users/1/edit" for ::1 at 2019-09-24 16:52:40 +0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:67:in `set_user'
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 10.5ms | Allocations: 781)
+  Rendered users/edit.html.erb within layouts/application (Duration: 14.2ms | Allocations: 1033)
+Completed 200 OK in 79ms (Views: 65.8ms | ActiveRecord: 0.5ms | Allocations: 6930)
+
+
+Started GET "/users" for ::1 at 2019-09-24 16:52:44 +0700
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:15
+  Rendered users/index.html.erb within layouts/application (Duration: 17.1ms | Allocations: 739)
+Completed 200 OK in 89ms (Views: 80.9ms | ActiveRecord: 0.6ms | Allocations: 5982)
+
+
+Started GET "/users/1" for ::1 at 2019-09-24 16:52:47 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:67:in `set_user'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 1.4ms | Allocations: 92)
+Completed 200 OK in 88ms (Views: 74.0ms | ActiveRecord: 0.7ms | Allocations: 5837)
+
+
+Started GET "/users" for ::1 at 2019-09-24 16:52:49 +0700
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:15
+  Rendered users/index.html.erb within layouts/application (Duration: 19.2ms | Allocations: 734)
+Completed 200 OK in 93ms (Views: 80.3ms | ActiveRecord: 0.6ms | Allocations: 5977)
+
+
+Started GET "/users" for ::1 at 2019-09-24 16:58:41 +0700
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:15
+  Rendered users/index.html.erb within layouts/application (Duration: 6.8ms | Allocations: 4645)
+Completed 200 OK in 761ms (Views: 753.7ms | ActiveRecord: 0.8ms | Allocations: 1250154)
+
+
+Started GET "/users/1" for ::1 at 2019-09-24 16:59:11 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:67:in `set_user'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 2.4ms | Allocations: 283)
+Completed 200 OK in 95ms (Views: 12.6ms | ActiveRecord: 0.8ms | Allocations: 8183)
+
+
+Started GET "/users" for ::1 at 2019-09-24 16:59:13 +0700
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:15
+  Rendered users/index.html.erb within layouts/application (Duration: 8.8ms | Allocations: 745)
+Completed 200 OK in 51ms (Views: 46.5ms | ActiveRecord: 0.6ms | Allocations: 6001)
+
+
+Started GET "/users/new" for ::1 at 2019-09-24 17:01:20 +0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 51.3ms | Allocations: 4466)
+  Rendered users/new.html.erb within layouts/application (Duration: 55.4ms | Allocations: 4816)
+Completed 200 OK in 84ms (Views: 79.7ms | ActiveRecord: 0.0ms | Allocations: 10126)
+
+
+Started POST "/users" for ::1 at 2019-09-24 17:01:25 +0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"L5j7E+FQgWoqUp1t9ptI3RQyGrCQ5kqhpCYGg3MrHF4ZBWHrH8nK4GHzUbxT3UmxD5BmEny841iyxMP1LhijWA==", "user"=>{"name"=>"tuan2", "email"=>"tuanm2@gmail.com"}, "commit"=>"Create User"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:30:in `block in create'
+  [1m[36mUser Create (1.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "tuan2"], ["email", "tuanm2@gmail.com"], ["created_at", "2019-09-24 10:01:26.002335"], ["updated_at", "2019-09-24 10:01:26.002335"]]
+  ↳ app/controllers/users_controller.rb:30:in `block in create'
+  [1m[35m (18.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:30:in `block in create'
+Redirected to http://localhost:3000/users/2
+Completed 302 Found in 48ms (ActiveRecord: 19.8ms | Allocations: 3661)
+
+
+Started GET "/users/2" for ::1 at 2019-09-24 17:01:26 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:67:in `set_user'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.6ms | Allocations: 96)
+Completed 200 OK in 20ms (Views: 16.4ms | ActiveRecord: 0.3ms | Allocations: 5857)
+
+
+Started GET "/users" for ::1 at 2019-09-24 17:01:27 +0700
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:15
+  Rendered users/index.html.erb within layouts/application (Duration: 10.0ms | Allocations: 858)
+Completed 200 OK in 43ms (Views: 39.3ms | ActiveRecord: 0.6ms | Allocations: 6098)
+
+
+Started DELETE "/users/1" for ::1 at 2019-09-24 17:01:30 +0700
+Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"NZCpw1Gjap6V6fmWLMmQ0GLnO65HA9cWDoPgw+LX8+XmzTO2ZiGWK3fXDsGsKPuhmCQ8zPYbgUDgP6zI6v5A2A==", "id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:67:in `set_user'
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:57:in `destroy'
+  [1m[36mUser Destroy (0.5ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/users_controller.rb:57:in `destroy'
+  [1m[35m (32.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:57:in `destroy'
+Redirected to http://localhost:3000/users
+Completed 302 Found in 50ms (ActiveRecord: 33.7ms | Allocations: 3491)
+
+
+Started GET "/users" for ::1 at 2019-09-24 17:01:30 +0700
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:15
+  Rendered users/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 737)
+Completed 200 OK in 12ms (Views: 10.5ms | ActiveRecord: 0.2ms | Allocations: 6001)
+
+
+Started GET "/users/2/edit" for ::1 at 2019-09-24 17:01:31 +0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:67:in `set_user'
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 7.9ms | Allocations: 781)
+  Rendered users/edit.html.erb within layouts/application (Duration: 11.1ms | Allocations: 1033)
+Completed 200 OK in 54ms (Views: 45.7ms | ActiveRecord: 0.5ms | Allocations: 6912)
+
+
+Started GET "/users" for ::1 at 2019-09-24 17:01:34 +0700
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:15
+  Rendered users/index.html.erb within layouts/application (Duration: 7.6ms | Allocations: 745)
+Completed 200 OK in 48ms (Views: 43.9ms | ActiveRecord: 0.6ms | Allocations: 6004)
+
+
+Started GET "/users/2" for ::1 at 2019-09-24 17:01:35 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:67:in `set_user'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 1.3ms | Allocations: 92)
+Completed 200 OK in 43ms (Views: 36.2ms | ActiveRecord: 0.6ms | Allocations: 5838)
+
+
+Started GET "/users" for ::1 at 2019-09-24 17:01:37 +0700
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:15
+  Rendered users/index.html.erb within layouts/application (Duration: 7.2ms | Allocations: 734)
+Completed 200 OK in 52ms (Views: 46.1ms | ActiveRecord: 0.6ms | Allocations: 5976)
+
+
+Started GET "/" for ::1 at 2019-09-24 17:05:20 +0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+AbstractController::ActionNotFound (The action 'hello' could not be found for ApplicationController):
+  
+actionpack (6.0.0) lib/abstract_controller/base.rb:131:in `process'
+actionview (6.0.0) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.0) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (6.0.0) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (6.0.0) lib/action_dispatch/routing/route_set.rb:51:in `dispatch'
+actionpack (6.0.0) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.0) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.0) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.0) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.0) lib/action_dispatch/routing/route_set.rb:837:in `call'
+rack (2.0.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+actionpack (6.0.0) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.0) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.0) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.0) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.0.7) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2019-09-24 17:06:16 +0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:15
+  Rendered users/index.html.erb within layouts/application (Duration: 6.4ms | Allocations: 4128)
+Completed 200 OK in 15ms (Views: 12.2ms | ActiveRecord: 0.8ms | Allocations: 9925)
+
+
+Started GET "/" for ::1 at 2019-09-24 17:06:19 +0700
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:15
+  Rendered users/index.html.erb within layouts/application (Duration: 7.4ms | Allocations: 734)
+Completed 200 OK in 44ms (Views: 40.9ms | ActiveRecord: 0.5ms | Allocations: 5979)
+
+
+Started GET "/" for ::1 at 2019-09-24 17:18:22 +0700
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:15
+  Rendered users/index.html.erb within layouts/application (Duration: 12.5ms | Allocations: 1011)
+Completed 200 OK in 54ms (Views: 49.5ms | ActiveRecord: 0.7ms | Allocations: 7188)
+
+
+Started GET "/" for ::1 at 2019-09-24 17:18:23 +0700
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:15
+  Rendered users/index.html.erb within layouts/application (Duration: 8.0ms | Allocations: 743)
+Completed 200 OK in 43ms (Views: 38.7ms | ActiveRecord: 0.7ms | Allocations: 5994)
+
+
+Started GET "/" for ::1 at 2019-09-24 17:18:23 +0700
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:15
+  Rendered users/index.html.erb within layouts/application (Duration: 6.7ms | Allocations: 734)
+Completed 200 OK in 44ms (Views: 39.9ms | ActiveRecord: 0.5ms | Allocations: 5978)
+
+
+Started GET "/" for ::1 at 2019-09-24 17:18:23 +0700
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:15
+  Rendered users/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 734)
+Completed 200 OK in 10ms (Views: 8.9ms | ActiveRecord: 0.1ms | Allocations: 5983)
+
+
+Started GET "/" for ::1 at 2019-09-24 17:18:23 +0700
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:15
+  Rendered users/index.html.erb within layouts/application (Duration: 5.1ms | Allocations: 734)
+Completed 200 OK in 43ms (Views: 39.8ms | ActiveRecord: 0.4ms | Allocations: 5974)
+
+
+Started GET "/" for ::1 at 2019-09-24 17:18:24 +0700
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:15
+  Rendered users/index.html.erb within layouts/application (Duration: 4.4ms | Allocations: 734)
+Completed 200 OK in 22ms (Views: 20.3ms | ActiveRecord: 0.3ms | Allocations: 5973)
+
+
+Started GET "/" for ::1 at 2019-09-24 17:18:24 +0700
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:15
+  Rendered users/index.html.erb within layouts/application (Duration: 6.8ms | Allocations: 734)
+Completed 200 OK in 47ms (Views: 42.8ms | ActiveRecord: 0.6ms | Allocations: 5978)
+
+
+Started GET "/" for ::1 at 2019-09-24 17:18:24 +0700
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:15
+  Rendered users/index.html.erb within layouts/application (Duration: 4.3ms | Allocations: 734)
+Completed 200 OK in 24ms (Views: 21.8ms | ActiveRecord: 0.3ms | Allocations: 5972)
+
+
+Started GET "/" for ::1 at 2019-09-24 17:18:25 +0700
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:15
+  Rendered users/index.html.erb within layouts/application (Duration: 7.1ms | Allocations: 734)
+Completed 200 OK in 43ms (Views: 39.3ms | ActiveRecord: 0.6ms | Allocations: 5973)
+
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateMicroposts (20190924102002)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "microposts" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "content" text, "user_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190924102002"]]
+  [1m[35m (15.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2019-09-24 17:22:42 +0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:15
+  Rendered users/index.html.erb within layouts/application (Duration: 8.0ms | Allocations: 4234)
+Completed 200 OK in 28ms (Views: 25.0ms | ActiveRecord: 0.9ms | Allocations: 15570)
+
+
+Started GET "/micropost" for ::1 at 2019-09-24 17:22:48 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/micropost"):
+  
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.0.7) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/microposts" for ::1 at 2019-09-24 17:22:51 +0700
+Processing by MicropostsController#index as HTML
+  Rendering microposts/index.html.erb within layouts/application
+  [1m[36mMicropost Load (0.3ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts"[0m
+  ↳ app/views/microposts/index.html.erb:15
+  Rendered microposts/index.html.erb within layouts/application (Duration: 3.5ms | Allocations: 1189)
+Completed 200 OK in 22ms (Views: 15.0ms | ActiveRecord: 0.7ms | Allocations: 8159)
+
+
+Started GET "/microposts/new" for ::1 at 2019-09-24 17:22:54 +0700
+Processing by MicropostsController#new as HTML
+  Rendering microposts/new.html.erb within layouts/application
+  Rendered microposts/_form.html.erb (Duration: 6.1ms | Allocations: 1563)
+  Rendered microposts/new.html.erb within layouts/application (Duration: 7.4ms | Allocations: 1909)
+Completed 200 OK in 25ms (Views: 16.2ms | ActiveRecord: 0.5ms | Allocations: 10970)
+
+
+Started GET "/" for ::1 at 2019-09-29 22:25:29 +0700
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:15
+  Rendered users/index.html.erb within layouts/application (Duration: 7.2ms | Allocations: 4914)
+Completed 200 OK in 1151ms (Views: 1143.2ms | ActiveRecord: 0.8ms | Allocations: 1253883)
+
+
+Started GET "/users/new" for ::1 at 2019-09-29 22:27:24 +0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 21.8ms | Allocations: 4466)
+  Rendered users/new.html.erb within layouts/application (Duration: 28.3ms | Allocations: 4825)
+Completed 200 OK in 42ms (Views: 39.6ms | ActiveRecord: 0.0ms | Allocations: 11002)
+
+
+Started GET "/users" for ::1 at 2019-09-29 22:27:25 +0700
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:15
+  Rendered users/index.html.erb within layouts/application (Duration: 7.2ms | Allocations: 747)
+Completed 200 OK in 52ms (Views: 47.9ms | ActiveRecord: 0.5ms | Allocations: 6855)
+
+
+Started GET "/users/2" for ::1 at 2019-09-29 22:40:53 +0700
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:67:in `set_user'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 4.4ms | Allocations: 275)
+Completed 200 OK in 62ms (Views: 20.4ms | ActiveRecord: 1.1ms | Allocations: 9015)
+
+
+Started GET "/users/1" for ::1 at 2019-09-29 22:40:57 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:67:in `set_user'
+Completed 404 Not Found in 3ms (ActiveRecord: 0.3ms | Allocations: 1069)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=1):
+  
+app/controllers/users_controller.rb:67:in `set_user'
+Started GET "/users/2" for ::1 at 2019-09-29 22:41:00 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:67:in `set_user'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.6ms | Allocations: 92)
+Completed 200 OK in 10ms (Views: 7.1ms | ActiveRecord: 0.2ms | Allocations: 6734)
+
+
+Started GET "/users" for ::1 at 2019-09-29 22:41:02 +0700
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:15
+  Rendered users/index.html.erb within layouts/application (Duration: 7.8ms | Allocations: 757)
+Completed 200 OK in 47ms (Views: 43.3ms | ActiveRecord: 0.6ms | Allocations: 6863)
+
+
+Started GET "/users" for ::1 at 2019-09-29 22:47:41 +0700
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:15
+  Rendered users/index.html.erb within layouts/application (Duration: 8.7ms | Allocations: 756)
+Completed 200 OK in 57ms (Views: 51.9ms | ActiveRecord: 0.8ms | Allocations: 6861)
+
+
+Started GET "/users/new" for ::1 at 2019-09-29 22:47:42 +0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 9.3ms | Allocations: 729)
+  Rendered users/new.html.erb within layouts/application (Duration: 10.5ms | Allocations: 814)
+Completed 200 OK in 50ms (Views: 47.0ms | ActiveRecord: 0.0ms | Allocations: 6923)
+
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/users" for ::1 at 2019-09-29 22:51:13 +0700
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:15
+  Rendered users/index.html.erb within layouts/application (Duration: 6.1ms | Allocations: 4850)
+Completed 200 OK in 748ms (Views: 741.8ms | ActiveRecord: 0.6ms | Allocations: 1252549)
+
+
+Started GET "/users" for ::1 at 2019-09-29 22:51:26 +0700
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:15
+  Rendered users/index.html.erb within layouts/application (Duration: 8.8ms | Allocations: 751)
+Completed 200 OK in 54ms (Views: 49.3ms | ActiveRecord: 0.6ms | Allocations: 6858)
+
+
+Started GET "/microposts" for ::1 at 2019-09-29 22:51:45 +0700
+Processing by MicropostsController#index as HTML
+  Rendering microposts/index.html.erb within layouts/application
+  [1m[36mMicropost Load (0.2ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts"[0m
+  ↳ app/views/microposts/index.html.erb:15
+  Rendered microposts/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1206)
+Completed 200 OK in 11ms (Views: 8.8ms | ActiveRecord: 0.4ms | Allocations: 8101)
+
+
+Started GET "/microposts/new" for ::1 at 2019-09-29 22:51:47 +0700
+Processing by MicropostsController#new as HTML
+  Rendering microposts/new.html.erb within layouts/application
+  Rendered microposts/_form.html.erb (Duration: 26.8ms | Allocations: 2798)
+  Rendered microposts/new.html.erb within layouts/application (Duration: 33.6ms | Allocations: 3150)
+Completed 200 OK in 78ms (Views: 49.5ms | ActiveRecord: 1.2ms | Allocations: 12264)
+
+
+Started POST "/microposts" for ::1 at 2019-09-29 22:51:58 +0700
+Processing by MicropostsController#create as HTML
+  Parameters: {"authenticity_token"=>"hi5kHxbbKee5MvuZ70PY6tFAYaD77SNqQXOx9f6RXClFHeSRC/JJdJJhyCcF/e0LFK1pIZ1PmwQvpuwCyWEHYg==", "micropost"=>{"content"=>"hello", "user_id"=>"2"}, "commit"=>"Create Micropost"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/microposts_controller.rb:30:in `block in create'
+  [1m[36mMicropost Create (0.3ms)[0m  [1m[32mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "hello"], ["user_id", 2], ["created_at", "2019-09-29 15:51:58.665735"], ["updated_at", "2019-09-29 15:51:58.665735"]]
+  ↳ app/controllers/microposts_controller.rb:30:in `block in create'
+  [1m[35m (12.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/microposts_controller.rb:30:in `block in create'
+Redirected to http://localhost:3000/microposts/1
+Completed 302 Found in 28ms (ActiveRecord: 12.5ms | Allocations: 3668)
+
+
+Started GET "/microposts/1" for ::1 at 2019-09-29 22:51:58 +0700
+Processing by MicropostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMicropost Load (0.8ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts" WHERE "microposts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/microposts_controller.rb:67:in `set_micropost'
+  Rendering microposts/show.html.erb within layouts/application
+  Rendered microposts/show.html.erb within layouts/application (Duration: 3.0ms | Allocations: 277)
+Completed 200 OK in 38ms (Views: 24.8ms | ActiveRecord: 0.8ms | Allocations: 7453)
+
+
+Started GET "/microposts" for ::1 at 2019-09-29 22:52:00 +0700
+Processing by MicropostsController#index as HTML
+  Rendering microposts/index.html.erb within layouts/application
+  [1m[36mMicropost Load (0.5ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts"[0m
+  ↳ app/views/microposts/index.html.erb:15
+  Rendered microposts/index.html.erb within layouts/application (Duration: 6.7ms | Allocations: 744)
+Completed 200 OK in 43ms (Views: 38.9ms | ActiveRecord: 0.5ms | Allocations: 6848)
+
+
+Started GET "/microposts/new" for ::1 at 2019-09-29 22:53:40 +0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by MicropostsController#new as HTML
+  Rendering microposts/new.html.erb within layouts/application
+  Rendered microposts/_form.html.erb (Duration: 1.3ms | Allocations: 776)
+  Rendered microposts/new.html.erb within layouts/application (Duration: 1.5ms | Allocations: 862)
+Completed 200 OK in 27ms (Views: 8.7ms | ActiveRecord: 0.7ms | Allocations: 10930)
+
+
+Started POST "/microposts" for ::1 at 2019-09-29 22:53:44 +0700
+Processing by MicropostsController#create as HTML
+  Parameters: {"authenticity_token"=>"pnuECk4t0j71GhTRZ65xiGsX2ibxmHRH8x0mBVUZn45lSASEUwSyrd5JJ2+NEERprvrSp5c6zCmdyHvyYunExQ==", "micropost"=>{"content"=>"halo", "user_id"=>"2"}, "commit"=>"Create Micropost"}
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/microposts_controller.rb:30:in `block in create'
+  [1m[36mMicropost Create (1.5ms)[0m  [1m[32mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "halo"], ["user_id", 2], ["created_at", "2019-09-29 15:53:44.846399"], ["updated_at", "2019-09-29 15:53:44.846399"]]
+  ↳ app/controllers/microposts_controller.rb:30:in `block in create'
+  [1m[35m (11.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/microposts_controller.rb:30:in `block in create'
+Redirected to http://localhost:3000/microposts/2
+Completed 302 Found in 45ms (ActiveRecord: 13.9ms | Allocations: 3504)
+
+
+Started GET "/microposts/2" for ::1 at 2019-09-29 22:53:44 +0700
+Processing by MicropostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMicropost Load (0.9ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts" WHERE "microposts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/microposts_controller.rb:67:in `set_micropost'
+  Rendering microposts/show.html.erb within layouts/application
+  Rendered microposts/show.html.erb within layouts/application (Duration: 0.9ms | Allocations: 97)
+Completed 200 OK in 26ms (Views: 17.1ms | ActiveRecord: 0.9ms | Allocations: 6829)
+
+
+Started GET "/microposts" for ::1 at 2019-09-29 22:53:46 +0700
+Processing by MicropostsController#index as HTML
+  Rendering microposts/index.html.erb within layouts/application
+  [1m[36mMicropost Load (0.8ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts"[0m
+  ↳ app/views/microposts/index.html.erb:15
+  Rendered microposts/index.html.erb within layouts/application (Duration: 8.3ms | Allocations: 873)
+Completed 200 OK in 46ms (Views: 42.0ms | ActiveRecord: 0.8ms | Allocations: 6971)
+
+
+Started GET "/microposts" for ::1 at 2019-09-29 22:58:54 +0700
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by MicropostsController#index as HTML
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 1140)
+
+
+  
+SyntaxError (/home/tuan/demo2/app/models/micropost.rb:4: syntax error, unexpected ':', expecting end
+...                      presence: true
+...                              ^):
+  
+app/models/micropost.rb:4: syntax error, unexpected ':', expecting end
+app/models/micropost.rb:4: syntax error, unexpected ':', expecting end
+app/models/micropost.rb:4: syntax error, unexpected ':', expecting end
+app/controllers/microposts_controller.rb:7:in `index'
+Started GET "/microposts" for ::1 at 2019-09-29 22:59:23 +0700
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by MicropostsController#index as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 1156)
+
+
+  
+SyntaxError (/home/tuan/demo2/app/models/micropost.rb:4: syntax error, unexpected ':', expecting end
+    presence: true
+            ^):
+  
+app/models/micropost.rb:4: syntax error, unexpected ':', expecting end
+app/models/micropost.rb:4: syntax error, unexpected ':', expecting end
+app/models/micropost.rb:4: syntax error, unexpected ':', expecting end
+app/controllers/microposts_controller.rb:7:in `index'
+Started POST "/__web_console/repl_sessions/b98a5f7f1b93fe71dbfa87b761b8d33d/trace" for ::1 at 2019-09-29 22:59:38 +0700
+Started POST "/__web_console/repl_sessions/b98a5f7f1b93fe71dbfa87b761b8d33d/trace" for ::1 at 2019-09-29 22:59:45 +0700
+Started POST "/__web_console/repl_sessions/b98a5f7f1b93fe71dbfa87b761b8d33d/trace" for ::1 at 2019-09-29 22:59:47 +0700
+Started POST "/__web_console/repl_sessions/b98a5f7f1b93fe71dbfa87b761b8d33d/trace" for ::1 at 2019-09-29 22:59:47 +0700
+Started POST "/__web_console/repl_sessions/b98a5f7f1b93fe71dbfa87b761b8d33d/trace" for ::1 at 2019-09-29 22:59:48 +0700
+Started POST "/__web_console/repl_sessions/b98a5f7f1b93fe71dbfa87b761b8d33d/trace" for ::1 at 2019-09-29 22:59:48 +0700
+Started GET "/microposts/2" for ::1 at 2019-09-29 23:00:09 +0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by MicropostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMicropost Load (0.1ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts" WHERE "microposts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/microposts_controller.rb:67:in `set_micropost'
+  Rendering microposts/show.html.erb within layouts/application
+  Rendered microposts/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 103)
+Completed 200 OK in 20ms (Views: 8.0ms | ActiveRecord: 0.7ms | Allocations: 11772)
+
+
+Started GET "/microposts/" for ::1 at 2019-09-29 23:00:13 +0700
+Processing by MicropostsController#index as HTML
+  Rendering microposts/index.html.erb within layouts/application
+  [1m[36mMicropost Load (1.0ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts"[0m
+  ↳ app/views/microposts/index.html.erb:15
+  Rendered microposts/index.html.erb within layouts/application (Duration: 10.8ms | Allocations: 928)
+Completed 200 OK in 45ms (Views: 40.4ms | ActiveRecord: 1.0ms | Allocations: 7022)
+
+
+Started GET "/microposts/new" for ::1 at 2019-09-29 23:00:15 +0700
+Processing by MicropostsController#new as HTML
+  Rendering microposts/new.html.erb within layouts/application
+  Rendered microposts/_form.html.erb (Duration: 7.5ms | Allocations: 731)
+  Rendered microposts/new.html.erb within layouts/application (Duration: 8.8ms | Allocations: 816)
+Completed 200 OK in 60ms (Views: 58.1ms | ActiveRecord: 0.0ms | Allocations: 6933)
+
+
+Started POST "/microposts" for ::1 at 2019-09-29 23:00:17 +0700
+Processing by MicropostsController#create as HTML
+  Parameters: {"authenticity_token"=>"w1CzBU+9UexEoEjzPEPiQ204pCfKG9BaIC66zSXoN98AYzOLUpQxf2/ze03W/deiqNWspqy5aDRO++c6EhhslA==", "micropost"=>{"content"=>"", "user_id"=>""}, "commit"=>"Create Micropost"}
+  Rendering microposts/new.html.erb within layouts/application
+  Rendered microposts/_form.html.erb (Duration: 5.2ms | Allocations: 1003)
+  Rendered microposts/new.html.erb within layouts/application (Duration: 6.0ms | Allocations: 1088)
+Completed 200 OK in 88ms (Views: 20.3ms | ActiveRecord: 0.0ms | Allocations: 12211)
+
+
+Started POST "/microposts" for ::1 at 2019-09-29 23:00:19 +0700
+Processing by MicropostsController#create as HTML
+  Parameters: {"authenticity_token"=>"NJ79c74jyrDwfwSIluv4o3o1YoLT+ue/bNC1HAwsTSwa9NggoZMlbsKlxDdFCYnmCGmzKIpgDSpqGykbT5G2Vw==", "micropost"=>{"content"=>"1", "user_id"=>""}, "commit"=>"Create Micropost"}
+  Rendering microposts/new.html.erb within layouts/application
+  Rendered microposts/_form.html.erb (Duration: 9.5ms | Allocations: 853)
+  Rendered microposts/new.html.erb within layouts/application (Duration: 10.9ms | Allocations: 938)
+Completed 200 OK in 59ms (Views: 45.1ms | ActiveRecord: 0.0ms | Allocations: 7876)
+
+
+Started GET "/microposts/2" for ::1 at 2019-09-29 23:05:43 +0700
+Processing by MicropostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMicropost Load (0.1ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts" WHERE "microposts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/microposts_controller.rb:67:in `set_micropost'
+  Rendering microposts/show.html.erb within layouts/application
+  Rendered microposts/show.html.erb within layouts/application (Duration: 0.7ms | Allocations: 92)
+Completed 200 OK in 9ms (Views: 6.9ms | ActiveRecord: 0.1ms | Allocations: 6686)
+
+
+Started GET "/microposts/" for ::1 at 2019-09-29 23:06:08 +0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by MicropostsController#index as HTML
+  Rendering microposts/index.html.erb within layouts/application
+  [1m[36mMicropost Load (0.1ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts"[0m
+  ↳ app/views/microposts/index.html.erb:15
+  Rendered microposts/index.html.erb within layouts/application (Duration: 7.4ms | Allocations: 4184)
+Completed 200 OK in 15ms (Views: 12.1ms | ActiveRecord: 0.8ms | Allocations: 11152)
+
+
+Started GET "/microposts/2" for ::1 at 2019-09-29 23:06:13 +0700
+Processing by MicropostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMicropost Load (0.2ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts" WHERE "microposts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/microposts_controller.rb:67:in `set_micropost'
+  Rendering microposts/show.html.erb within layouts/application
+  Rendered microposts/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 93)
+Completed 200 OK in 11ms (Views: 9.0ms | ActiveRecord: 0.2ms | Allocations: 6799)
+
+
+Started GET "/microposts" for ::1 at 2019-09-29 23:07:45 +0700
+Processing by MicropostsController#index as HTML
+  Rendering microposts/index.html.erb within layouts/application
+  [1m[36mMicropost Load (0.1ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts"[0m
+  ↳ app/views/microposts/index.html.erb:15
+  Rendered microposts/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 853)
+Completed 200 OK in 14ms (Views: 13.5ms | ActiveRecord: 0.1ms | Allocations: 6949)
+
+
+Started GET "/microposts/new" for ::1 at 2019-09-29 23:07:46 +0700
+Processing by MicropostsController#new as HTML
+  Rendering microposts/new.html.erb within layouts/application
+  Rendered microposts/_form.html.erb (Duration: 1.9ms | Allocations: 716)
+  Rendered microposts/new.html.erb within layouts/application (Duration: 2.3ms | Allocations: 801)
+Completed 200 OK in 11ms (Views: 10.6ms | ActiveRecord: 0.0ms | Allocations: 6902)
+
+
+Started POST "/microposts" for ::1 at 2019-09-29 23:09:56 +0700
+Processing by MicropostsController#create as HTML
+  Parameters: {"authenticity_token"=>"zdwAyTxzvr3b6VP74UIKEfbzZ56UAceJU/+Q+Xq5uWEO74BHIVreLvC6YEUL/D/wMx5vH/Kjf+c9Ks0OTUniKg==", "micropost"=>{"content"=>"hallo", "user_id"=>"1"}, "commit"=>"Create Micropost"}
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/microposts_controller.rb:30:in `block in create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/microposts_controller.rb:30:in `block in create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/microposts_controller.rb:30:in `block in create'
+  Rendering microposts/new.html.erb within layouts/application
+  Rendered microposts/_form.html.erb (Duration: 4.0ms | Allocations: 856)
+  Rendered microposts/new.html.erb within layouts/application (Duration: 4.5ms | Allocations: 941)
+Completed 200 OK in 91ms (Views: 16.3ms | ActiveRecord: 2.4ms | Allocations: 15232)
+
+
+Started POST "/microposts" for ::1 at 2019-09-29 23:09:59 +0700
+Processing by MicropostsController#create as HTML
+  Parameters: {"authenticity_token"=>"hyaUoJm6nJgMEgxAACgrKXUW54PxF+HkcbpB3NTjvyWpTLHzhgpzRj7IzP/TylpsB0o2KaiNC3F3cd3bl15EXg==", "micropost"=>{"content"=>"hallo", "user_id"=>"2"}, "commit"=>"Create Micropost"}
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/microposts_controller.rb:30:in `block in create'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/microposts_controller.rb:30:in `block in create'
+  [1m[36mMicropost Create (2.9ms)[0m  [1m[32mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "hallo"], ["user_id", 2], ["created_at", "2019-09-29 16:09:59.292414"], ["updated_at", "2019-09-29 16:09:59.292414"]]
+  ↳ app/controllers/microposts_controller.rb:30:in `block in create'
+  [1m[35m (14.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/microposts_controller.rb:30:in `block in create'
+Redirected to http://localhost:3000/microposts/3
+Completed 302 Found in 77ms (ActiveRecord: 18.3ms | Allocations: 7227)
+
+
+Started GET "/microposts/3" for ::1 at 2019-09-29 23:09:59 +0700
+Processing by MicropostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mMicropost Load (0.3ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts" WHERE "microposts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/microposts_controller.rb:67:in `set_micropost'
+  Rendering microposts/show.html.erb within layouts/application
+  Rendered microposts/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 94)
+Completed 200 OK in 18ms (Views: 14.4ms | ActiveRecord: 0.3ms | Allocations: 6699)
+
+
+Started GET "/microposts" for ::1 at 2019-09-29 23:13:03 +0700
+Processing by MicropostsController#index as HTML
+  Rendering microposts/index.html.erb within layouts/application
+  [1m[36mMicropost Load (0.5ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts"[0m
+  ↳ app/views/microposts/index.html.erb:15
+  Rendered microposts/index.html.erb within layouts/application (Duration: 8.4ms | Allocations: 973)
+Completed 200 OK in 46ms (Views: 42.9ms | ActiveRecord: 0.5ms | Allocations: 7068)
+
+
+Started GET "/microposts/new" for ::1 at 2019-09-29 23:13:07 +0700
+Processing by MicropostsController#new as HTML
+  Rendering microposts/new.html.erb within layouts/application
+  Rendered microposts/_form.html.erb (Duration: 7.0ms | Allocations: 712)
+  Rendered microposts/new.html.erb within layouts/application (Duration: 8.3ms | Allocations: 797)
+Completed 200 OK in 82ms (Views: 79.2ms | ActiveRecord: 0.0ms | Allocations: 6908)
+
+
+Started GET "/microposts/new" for ::1 at 2019-09-29 23:24:04 +0700
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by MicropostsController#new as HTML
+  Rendering microposts/new.html.erb within layouts/application
+  Rendered microposts/_form.html.erb (Duration: 11.5ms | Allocations: 989)
+  Rendered microposts/new.html.erb within layouts/application (Duration: 16.5ms | Allocations: 1337)
+Completed 200 OK in 60ms (Views: 54.1ms | ActiveRecord: 0.0ms | Allocations: 8370)
+
+
+Started POST "/microposts" for ::1 at 2019-09-29 23:24:08 +0700
+Processing by MicropostsController#create as HTML
+  Parameters: {"authenticity_token"=>"qSbOPqRF89ft9lrYU4mlkChj7uu4q1SmMY5M9b3NfH6HTOttu/UcCd8smmeAa9TVWj8/QeExvjM3RdDy/nCHBQ==", "micropost"=>{"content"=>""}, "commit"=>"Create Micropost"}
+  Rendering microposts/new.html.erb within layouts/application
+  Rendered microposts/_form.html.erb (Duration: 11.8ms | Allocations: 951)
+  Rendered microposts/new.html.erb within layouts/application (Duration: 13.3ms | Allocations: 1037)
+Completed 200 OK in 62ms (Views: 49.9ms | ActiveRecord: 0.0ms | Allocations: 8258)
+
+
+Started GET "/microposts" for ::1 at 2019-09-29 23:24:34 +0700
+Processing by MicropostsController#index as HTML
+  Rendering microposts/index.html.erb within layouts/application
+  [1m[36mMicropost Load (0.8ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts"[0m
+  ↳ app/views/microposts/index.html.erb:15
+  Rendered microposts/index.html.erb within layouts/application (Duration: 12.2ms | Allocations: 1256)
+Completed 200 OK in 59ms (Views: 53.9ms | ActiveRecord: 0.8ms | Allocations: 8281)
+
+
+Started GET "/microposts" for ::1 at 2019-09-29 23:24:36 +0700
+Processing by MicropostsController#index as HTML
+  Rendering microposts/index.html.erb within layouts/application
+  [1m[36mMicropost Load (0.4ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts"[0m
+  ↳ app/views/microposts/index.html.erb:15
+  Rendered microposts/index.html.erb within layouts/application (Duration: 7.2ms | Allocations: 982)
+Completed 200 OK in 47ms (Views: 43.4ms | ActiveRecord: 0.4ms | Allocations: 7076)
+
+
+Started GET "/microposts/new" for ::1 at 2019-09-29 23:24:37 +0700
+Processing by MicropostsController#new as HTML
+  Rendering microposts/new.html.erb within layouts/application
+  Rendered microposts/_form.html.erb (Duration: 9.4ms | Allocations: 880)
+  Rendered microposts/new.html.erb within layouts/application (Duration: 13.1ms | Allocations: 1222)
+Completed 200 OK in 51ms (Views: 46.6ms | ActiveRecord: 0.0ms | Allocations: 7457)
+
+
+Started GET "/microposts/new" for ::1 at 2019-09-29 23:39:21 +0700
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by MicropostsController#new as HTML
+  Rendering microposts/new.html.erb within layouts/application
+  Rendered microposts/_form.html.erb (Duration: 5.0ms | Allocations: 1354)
+  Rendered microposts/new.html.erb within layouts/application (Duration: 9.1ms | Allocations: 1677)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.0ms | Allocations: 2854)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <%= form_with(model: micropost, local: true) do |form| %>
+  <% if micropost.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(micropost.errors.count, "error") %> prohibited this micropost from being saved:</h2>
+
+      <ul>
+        <% micropost.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :content %>
+    <%= form.text_area :content %>
+  </div>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    
+<%= select_tag(:city_id, options_for_select(...)) %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+):
+1:    <%= form_with(model: micropost, local: true) do |form| %>
+2:      <% if micropost.errors.any? %>
+3:        <div id="error_explanation">
+4:          <h2><%= pluralize(micropost.errors.count, "error") %> prohibited this micropost from being saved:</h2>
+5:    
+6:          <ul>
+7:            <% micropost.errors.full_messages.each do |message| %>
+8:              <li><%= message %></li>
+9:            <% end %>
+10:          </ul>
+11:        </div>
+12:      <% end %>
+13:    
+14:      <div class="field">
+15:        <%= form.label :content %>
+16:        <%= form.text_area :content %>
+17:      </div>
+18:    
+19:      <div class="field">
+20:        <%= form.label :user_id %>
+21:        
+22:    <%= select_tag(:city_id, options_for_select(...)) %>
+23:      </div>
+24:    
+25:      <div class="actions">
+26:        <%= form.submit %>
+27:      </div>
+28:    <% end %>
+  
+app/views/microposts/_form.html.erb:22: syntax error, unexpected ..., expecting ')'
+app/views/microposts/_form.html.erb:28: syntax error, unexpected end, expecting ')'
+app/views/microposts/_form.html.erb:30: syntax error, unexpected end, expecting ')'
+app/views/microposts/_form.html.erb:22: syntax error, unexpected ..., expecting ')'
+app/views/microposts/_form.html.erb:28: syntax error, unexpected end, expecting ')'
+app/views/microposts/_form.html.erb:30: syntax error, unexpected end, expecting ')'
+app/views/microposts/_form.html.erb:22: syntax error, unexpected ..., expecting ')'
+app/views/microposts/_form.html.erb:28: syntax error, unexpected end, expecting ')'
+app/views/microposts/_form.html.erb:30: syntax error, unexpected end, expecting ')'
+app/views/microposts/_form.html.erb:22: syntax error, unexpected ..., expecting ')'
+app/views/microposts/_form.html.erb:28: syntax error, unexpected end, expecting ')'
+app/views/microposts/_form.html.erb:30: syntax error, unexpected end, expecting ')'
+app/views/microposts/_form.html.erb:22: syntax error, unexpected ..., expecting ')'
+app/views/microposts/_form.html.erb:28: syntax error, unexpected end, expecting ')'
+app/views/microposts/_form.html.erb:30: syntax error, unexpected end, expecting ')'
+app/views/microposts/_form.html.erb:22: syntax error, unexpected ..., expecting ')'
+app/views/microposts/_form.html.erb:28: syntax error, unexpected end, expecting ')'
+app/views/microposts/_form.html.erb:30: syntax error, unexpected end, expecting ')'
+app/views/microposts/new.html.erb:3
+Started GET "/microposts/new" for ::1 at 2019-09-29 23:39:28 +0700
+Processing by MicropostsController#new as HTML
+  Rendering microposts/new.html.erb within layouts/application
+  Rendered microposts/_form.html.erb (Duration: 9.7ms | Allocations: 1043)
+  Rendered microposts/new.html.erb within layouts/application (Duration: 14.6ms | Allocations: 1386)
+Completed 200 OK in 49ms (Views: 45.1ms | ActiveRecord: 0.0ms | Allocations: 8423)
+
+
+Started GET "/" for ::1 at 2019-09-30 11:41:39 +0700
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms | Allocations: 4115)
+
+
+  
+NameError (uninitialized constant #<Class:0x000055eacf2415e8>::FILL_IN):
+  
+app/models/user.rb:3:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+app/controllers/users_controller.rb:7:in `index'
+Started POST "/__web_console/repl_sessions/379e12f923d7217b196c788aa6976e12/trace" for ::1 at 2019-09-30 11:41:53 +0700
+Started POST "/__web_console/repl_sessions/379e12f923d7217b196c788aa6976e12/trace" for ::1 at 2019-09-30 11:41:55 +0700
+Started POST "/__web_console/repl_sessions/379e12f923d7217b196c788aa6976e12/trace" for ::1 at 2019-09-30 11:41:56 +0700
+Started POST "/__web_console/repl_sessions/379e12f923d7217b196c788aa6976e12/trace" for ::1 at 2019-09-30 11:41:59 +0700
+Started POST "/__web_console/repl_sessions/379e12f923d7217b196c788aa6976e12/trace" for ::1 at 2019-09-30 11:42:08 +0700
+Started POST "/__web_console/repl_sessions/379e12f923d7217b196c788aa6976e12/trace" for ::1 at 2019-09-30 11:42:11 +0700
+Started GET "/" for ::1 at 2019-09-30 11:42:22 +0700
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:15
+  Rendered users/index.html.erb within layouts/application (Duration: 45.9ms | Allocations: 4161)
+Completed 200 OK in 1204ms (Views: 1196.9ms | ActiveRecord: 2.7ms | Allocations: 1249718)
+
+
+Started GET "/microposts" for ::1 at 2019-09-30 11:44:04 +0700
+Processing by MicropostsController#index as HTML
+  Rendering microposts/index.html.erb within layouts/application
+  [1m[36mMicropost Load (0.7ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts"[0m
+  ↳ app/views/microposts/index.html.erb:15
+  Rendered microposts/index.html.erb within layouts/application (Duration: 15.8ms | Allocations: 4500)
+Completed 200 OK in 43ms (Views: 26.9ms | ActiveRecord: 1.6ms | Allocations: 12059)
+
+
+Started GET "/microposts" for ::1 at 2019-09-30 11:47:09 +0700
+Processing by MicropostsController#index as HTML
+  Rendering microposts/index.html.erb within layouts/application
+  [1m[36mMicropost Load (0.4ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts"[0m
+  ↳ app/views/microposts/index.html.erb:15
+  Rendered microposts/index.html.erb within layouts/application (Duration: 13.5ms | Allocations: 1245)
+Completed 200 OK in 64ms (Views: 59.1ms | ActiveRecord: 0.4ms | Allocations: 8282)
+
+
+Started GET "/microposts" for ::1 at 2019-09-30 11:47:13 +0700
+Processing by MicropostsController#index as HTML
+  Rendering microposts/index.html.erb within layouts/application
+  [1m[36mMicropost Load (0.4ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts"[0m
+  ↳ app/views/microposts/index.html.erb:15
+  Rendered microposts/index.html.erb within layouts/application (Duration: 9.2ms | Allocations: 982)
+Completed 200 OK in 53ms (Views: 50.1ms | ActiveRecord: 0.4ms | Allocations: 7085)
+
+
+Started GET "/microposts" for ::1 at 2019-09-30 11:47:14 +0700
+Processing by MicropostsController#index as HTML
+  Rendering microposts/index.html.erb within layouts/application
+  [1m[36mMicropost Load (1.1ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts"[0m
+  ↳ app/views/microposts/index.html.erb:15
+  Rendered microposts/index.html.erb within layouts/application (Duration: 12.2ms | Allocations: 973)
+Completed 200 OK in 50ms (Views: 46.1ms | ActiveRecord: 1.1ms | Allocations: 7059)
+
+
+Started GET "/" for ::1 at 2019-09-30 11:47:17 +0700
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:15
+  Rendered users/index.html.erb within layouts/application (Duration: 14.5ms | Allocations: 1000)
+Completed 200 OK in 51ms (Views: 44.9ms | ActiveRecord: 0.6ms | Allocations: 7679)
+
+
+Started GET "/microposts" for ::1 at 2019-09-30 11:47:27 +0700
+Processing by MicropostsController#index as HTML
+  Rendering microposts/index.html.erb within layouts/application
+  [1m[36mMicropost Load (0.2ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts"[0m
+  ↳ app/views/microposts/index.html.erb:15
+  Rendered microposts/index.html.erb within layouts/application (Duration: 3.5ms | Allocations: 1238)
+Completed 200 OK in 15ms (Views: 13.9ms | ActiveRecord: 0.2ms | Allocations: 8257)
+
+
+Started GET "/microposts/1" for ::1 at 2019-09-30 11:47:57 +0700
+Processing by MicropostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMicropost Load (1.1ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts" WHERE "microposts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/microposts_controller.rb:67:in `set_micropost'
+  Rendering microposts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/microposts/show.html.erb:10
+  Rendered microposts/show.html.erb within layouts/application (Duration: 11.9ms | Allocations: 2706)
+Completed 200 OK in 74ms (Views: 34.0ms | ActiveRecord: 1.4ms | Allocations: 11400)
+
+
+Started GET "/microposts" for ::1 at 2019-09-30 11:48:01 +0700
+Processing by MicropostsController#index as HTML
+  Rendering microposts/index.html.erb within layouts/application
+  [1m[36mMicropost Load (0.6ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts"[0m
+  ↳ app/views/microposts/index.html.erb:15
+  Rendered microposts/index.html.erb within layouts/application (Duration: 9.1ms | Allocations: 976)
+Completed 200 OK in 60ms (Views: 55.6ms | ActiveRecord: 0.6ms | Allocations: 7072)
+
+
+Started GET "/microposts" for ::1 at 2019-09-30 11:48:50 +0700
+Processing by MicropostsController#index as HTML
+  Rendering microposts/index.html.erb within layouts/application
+  [1m[36mMicropost Load (0.7ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts"[0m
+  ↳ app/views/microposts/index.html.erb:15
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/microposts/index.html.erb:18
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/microposts/index.html.erb:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/microposts/index.html.erb:18
+  Rendered microposts/index.html.erb within layouts/application (Duration: 29.0ms | Allocations: 3159)
+Completed 200 OK in 53ms (Views: 47.7ms | ActiveRecord: 1.4ms | Allocations: 10191)
+
+
+Started GET "/microposts/1" for ::1 at 2019-09-30 11:48:53 +0700
+Processing by MicropostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMicropost Load (0.7ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts" WHERE "microposts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/microposts_controller.rb:67:in `set_micropost'
+  Rendering microposts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/microposts/show.html.erb:10
+  Rendered microposts/show.html.erb within layouts/application (Duration: 8.4ms | Allocations: 940)
+Completed 200 OK in 54ms (Views: 42.1ms | ActiveRecord: 1.2ms | Allocations: 7676)
+
+
+Started GET "/microposts" for ::1 at 2019-09-30 11:49:25 +0700
+Processing by MicropostsController#index as HTML
+  Rendering microposts/index.html.erb within layouts/application
+  [1m[36mMicropost Load (0.6ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts"[0m
+  ↳ app/views/microposts/index.html.erb:15
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/microposts/index.html.erb:18
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/microposts/index.html.erb:18
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/microposts/index.html.erb:18
+  Rendered microposts/index.html.erb within layouts/application (Duration: 34.6ms | Allocations: 3154)
+Completed 200 OK in 87ms (Views: 80.0ms | ActiveRecord: 1.4ms | Allocations: 10182)
+
+
+Started GET "/microposts/new" for ::1 at 2019-09-30 11:49:30 +0700
+Processing by MicropostsController#new as HTML
+  Rendering microposts/new.html.erb within layouts/application
+  Rendered microposts/_form.html.erb (Duration: 61.8ms | Allocations: 4618)
+  Rendered microposts/new.html.erb within layouts/application (Duration: 70.5ms | Allocations: 4964)
+Completed 200 OK in 97ms (Views: 86.8ms | ActiveRecord: 0.0ms | Allocations: 11127)
+
+
+Started GET "/microposts/new" for ::1 at 2019-09-30 11:54:35 +0700
+Processing by MicropostsController#new as HTML
+  Rendering microposts/new.html.erb within layouts/application
+  Rendered microposts/_form.html.erb (Duration: 20.5ms | Allocations: 1358)
+  Rendered microposts/new.html.erb within layouts/application (Duration: 25.0ms | Allocations: 1681)
+Completed 500 Internal Server Error in 53ms (ActiveRecord: 0.0ms | Allocations: 2857)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <%= form_with(model: micropost, local: true) do |form| %>
+  <% if micropost.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(micropost.errors.count, "error") %> prohibited this micropost from being saved:</h2>
+
+      <ul>
+        <% micropost.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :content %>
+    <%= form.text_area :content %>
+  </div>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.select:options_from_collection_for_select(form, 'user_id', 'name') %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+):
+1:    <%= form_with(model: micropost, local: true) do |form| %>
+2:      <% if micropost.errors.any? %>
+3:        <div id="error_explanation">
+4:          <h2><%= pluralize(micropost.errors.count, "error") %> prohibited this micropost from being saved:</h2>
+5:    
+6:          <ul>
+7:            <% micropost.errors.full_messages.each do |message| %>
+8:              <li><%= message %></li>
+9:            <% end %>
+10:          </ul>
+11:        </div>
+12:      <% end %>
+13:    
+14:      <div class="field">
+15:        <%= form.label :content %>
+16:        <%= form.text_area :content %>
+17:      </div>
+18:    
+19:      <div class="field">
+20:        <%= form.label :user_id %>
+21:        <%= form.select:options_from_collection_for_select(form, 'user_id', 'name') %>
+22:      </div>
+23:    
+24:      <div class="actions">
+25:        <%= form.submit %>
+26:      </div>
+27:    <% end %>
+  
+app/views/microposts/_form.html.erb:21: syntax error, unexpected '(', expecting ')'
+app/views/microposts/_form.html.erb:21: syntax error, unexpected ',', expecting '.' or &. or :: or '['
+app/views/microposts/_form.html.erb:21: syntax error, unexpected ')', expecting end
+app/views/microposts/_form.html.erb:29: syntax error, unexpected end, expecting end-of-input
+app/views/microposts/_form.html.erb:21: syntax error, unexpected '(', expecting ')'
+app/views/microposts/_form.html.erb:21: syntax error, unexpected ',', expecting '.' or &. or :: or '['
+app/views/microposts/_form.html.erb:21: syntax error, unexpected ')', expecting end
+app/views/microposts/_form.html.erb:29: syntax error, unexpected end, expecting end-of-input
+app/views/microposts/_form.html.erb:21: syntax error, unexpected '(', expecting ')'
+app/views/microposts/_form.html.erb:21: syntax error, unexpected ',', expecting '.' or &. or :: or '['
+app/views/microposts/_form.html.erb:21: syntax error, unexpected ')', expecting end
+app/views/microposts/_form.html.erb:29: syntax error, unexpected end, expecting end-of-input
+app/views/microposts/_form.html.erb:21: syntax error, unexpected '(', expecting ')'
+app/views/microposts/_form.html.erb:21: syntax error, unexpected ',', expecting '.' or &. or :: or '['
+app/views/microposts/_form.html.erb:21: syntax error, unexpected ')', expecting end
+app/views/microposts/_form.html.erb:29: syntax error, unexpected end, expecting end-of-input
+app/views/microposts/_form.html.erb:21: syntax error, unexpected '(', expecting ')'
+app/views/microposts/_form.html.erb:21: syntax error, unexpected ',', expecting '.' or &. or :: or '['
+app/views/microposts/_form.html.erb:21: syntax error, unexpected ')', expecting end
+app/views/microposts/_form.html.erb:29: syntax error, unexpected end, expecting end-of-input
+app/views/microposts/_form.html.erb:21: syntax error, unexpected '(', expecting ')'
+app/views/microposts/_form.html.erb:21: syntax error, unexpected ',', expecting '.' or &. or :: or '['
+app/views/microposts/_form.html.erb:21: syntax error, unexpected ')', expecting end
+app/views/microposts/_form.html.erb:29: syntax error, unexpected end, expecting end-of-input
+app/views/microposts/new.html.erb:3
+Started GET "/microposts/new" for ::1 at 2019-09-30 11:59:30 +0700
+Processing by MicropostsController#new as HTML
+  Rendering microposts/new.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/microposts/_form.html.erb:21
+  Rendered microposts/_form.html.erb (Duration: 47.8ms | Allocations: 3793)
+  Rendered microposts/new.html.erb within layouts/application (Duration: 51.6ms | Allocations: 4136)
+Completed 200 OK in 93ms (Views: 87.3ms | ActiveRecord: 0.6ms | Allocations: 11080)
+
+
+Started GET "/microposts/new" for ::1 at 2019-09-30 12:06:30 +0700
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by MicropostsController#new as HTML
+  Rendering microposts/new.html.erb within layouts/application
+  Rendered microposts/_form.html.erb (Duration: 4.1ms | Allocations: 1358)
+  Rendered microposts/new.html.erb within layouts/application (Duration: 8.9ms | Allocations: 1681)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.0ms | Allocations: 2851)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <%= form_with(model: micropost, local: true) do |form| %>
+  <% if micropost.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(micropost.errors.count, "error") %> prohibited this micropost from being saved:</h2>
+
+      <ul>
+        <% micropost.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :content %>
+    <%= form.text_area :content %>
+  </div>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.collection_select:options_from_collection_for_select(form, 'user_id', 'name') %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+):
+1:    <%= form_with(model: micropost, local: true) do |form| %>
+2:      <% if micropost.errors.any? %>
+3:        <div id="error_explanation">
+4:          <h2><%= pluralize(micropost.errors.count, "error") %> prohibited this micropost from being saved:</h2>
+5:    
+6:          <ul>
+7:            <% micropost.errors.full_messages.each do |message| %>
+8:              <li><%= message %></li>
+9:            <% end %>
+10:          </ul>
+11:        </div>
+12:      <% end %>
+13:    
+14:      <div class="field">
+15:        <%= form.label :content %>
+16:        <%= form.text_area :content %>
+17:      </div>
+18:    
+19:      <div class="field">
+20:        <%= form.label :user_id %>
+21:        <%= form.collection_select:options_from_collection_for_select(form, 'user_id', 'name') %>
+22:      </div>
+23:    
+24:      <div class="actions">
+25:        <%= form.submit %>
+26:      </div>
+27:    <% end %>
+  
+app/views/microposts/_form.html.erb:21: syntax error, unexpected '(', expecting ')'
+app/views/microposts/_form.html.erb:21: syntax error, unexpected ',', expecting '.' or &. or :: or '['
+app/views/microposts/_form.html.erb:21: syntax error, unexpected ')', expecting end
+app/views/microposts/_form.html.erb:29: syntax error, unexpected end, expecting end-of-input
+app/views/microposts/_form.html.erb:21: syntax error, unexpected '(', expecting ')'
+app/views/microposts/_form.html.erb:21: syntax error, unexpected ',', expecting '.' or &. or :: or '['
+app/views/microposts/_form.html.erb:21: syntax error, unexpected ')', expecting end
+app/views/microposts/_form.html.erb:29: syntax error, unexpected end, expecting end-of-input
+app/views/microposts/_form.html.erb:21: syntax error, unexpected '(', expecting ')'
+app/views/microposts/_form.html.erb:21: syntax error, unexpected ',', expecting '.' or &. or :: or '['
+app/views/microposts/_form.html.erb:21: syntax error, unexpected ')', expecting end
+app/views/microposts/_form.html.erb:29: syntax error, unexpected end, expecting end-of-input
+app/views/microposts/_form.html.erb:21: syntax error, unexpected '(', expecting ')'
+app/views/microposts/_form.html.erb:21: syntax error, unexpected ',', expecting '.' or &. or :: or '['
+app/views/microposts/_form.html.erb:21: syntax error, unexpected ')', expecting end
+app/views/microposts/_form.html.erb:29: syntax error, unexpected end, expecting end-of-input
+app/views/microposts/_form.html.erb:21: syntax error, unexpected '(', expecting ')'
+app/views/microposts/_form.html.erb:21: syntax error, unexpected ',', expecting '.' or &. or :: or '['
+app/views/microposts/_form.html.erb:21: syntax error, unexpected ')', expecting end
+app/views/microposts/_form.html.erb:29: syntax error, unexpected end, expecting end-of-input
+app/views/microposts/_form.html.erb:21: syntax error, unexpected '(', expecting ')'
+app/views/microposts/_form.html.erb:21: syntax error, unexpected ',', expecting '.' or &. or :: or '['
+app/views/microposts/_form.html.erb:21: syntax error, unexpected ')', expecting end
+app/views/microposts/_form.html.erb:29: syntax error, unexpected end, expecting end-of-input
+app/views/microposts/new.html.erb:3
+Started GET "/microposts/new" for ::1 at 2019-09-30 12:15:40 +0700
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by MicropostsController#new as HTML
+  Rendering microposts/new.html.erb within layouts/application
+  Rendered microposts/_form.html.erb (Duration: 4.8ms | Allocations: 1358)
+  Rendered microposts/new.html.erb within layouts/application (Duration: 9.4ms | Allocations: 1684)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.0ms | Allocations: 2859)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <%= form_with(model: micropost, local: true) do |form| %>
+  <% if micropost.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(micropost.errors.count, "error") %> prohibited this micropost from being saved:</h2>
+
+      <ul>
+        <% micropost.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :content %>
+    <%= form.text_area :content %>
+  </div>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.collection_select:options_from_collection_for_select(@user, 'user_id', 'name') %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+):
+1:    <%= form_with(model: micropost, local: true) do |form| %>
+2:      <% if micropost.errors.any? %>
+3:        <div id="error_explanation">
+4:          <h2><%= pluralize(micropost.errors.count, "error") %> prohibited this micropost from being saved:</h2>
+5:    
+6:          <ul>
+7:            <% micropost.errors.full_messages.each do |message| %>
+8:              <li><%= message %></li>
+9:            <% end %>
+10:          </ul>
+11:        </div>
+12:      <% end %>
+13:    
+14:      <div class="field">
+15:        <%= form.label :content %>
+16:        <%= form.text_area :content %>
+17:      </div>
+18:    
+19:      <div class="field">
+20:        <%= form.label :user_id %>
+21:        <%= form.collection_select:options_from_collection_for_select(@user, 'user_id', 'name') %>
+22:      </div>
+23:    
+24:      <div class="actions">
+25:        <%= form.submit %>
+26:      </div>
+27:    <% end %>
+  
+app/views/microposts/_form.html.erb:21: syntax error, unexpected '(', expecting ')'
+app/views/microposts/_form.html.erb:21: syntax error, unexpected ',', expecting '.' or &. or :: or '['
+app/views/microposts/_form.html.erb:21: syntax error, unexpected ')', expecting end
+app/views/microposts/_form.html.erb:29: syntax error, unexpected end, expecting end-of-input
+app/views/microposts/_form.html.erb:21: syntax error, unexpected '(', expecting ')'
+app/views/microposts/_form.html.erb:21: syntax error, unexpected ',', expecting '.' or &. or :: or '['
+app/views/microposts/_form.html.erb:21: syntax error, unexpected ')', expecting end
+app/views/microposts/_form.html.erb:29: syntax error, unexpected end, expecting end-of-input
+app/views/microposts/_form.html.erb:21: syntax error, unexpected '(', expecting ')'
+app/views/microposts/_form.html.erb:21: syntax error, unexpected ',', expecting '.' or &. or :: or '['
+app/views/microposts/_form.html.erb:21: syntax error, unexpected ')', expecting end
+app/views/microposts/_form.html.erb:29: syntax error, unexpected end, expecting end-of-input
+app/views/microposts/_form.html.erb:21: syntax error, unexpected '(', expecting ')'
+app/views/microposts/_form.html.erb:21: syntax error, unexpected ',', expecting '.' or &. or :: or '['
+app/views/microposts/_form.html.erb:21: syntax error, unexpected ')', expecting end
+app/views/microposts/_form.html.erb:29: syntax error, unexpected end, expecting end-of-input
+app/views/microposts/_form.html.erb:21: syntax error, unexpected '(', expecting ')'
+app/views/microposts/_form.html.erb:21: syntax error, unexpected ',', expecting '.' or &. or :: or '['
+app/views/microposts/_form.html.erb:21: syntax error, unexpected ')', expecting end
+app/views/microposts/_form.html.erb:29: syntax error, unexpected end, expecting end-of-input
+app/views/microposts/_form.html.erb:21: syntax error, unexpected '(', expecting ')'
+app/views/microposts/_form.html.erb:21: syntax error, unexpected ',', expecting '.' or &. or :: or '['
+app/views/microposts/_form.html.erb:21: syntax error, unexpected ')', expecting end
+app/views/microposts/_form.html.erb:29: syntax error, unexpected end, expecting end-of-input
+app/views/microposts/new.html.erb:3
+Started GET "/microposts/new" for ::1 at 2019-09-30 12:15:49 +0700
+Processing by MicropostsController#new as HTML
+  Rendering microposts/new.html.erb within layouts/application
+  Rendered microposts/_form.html.erb (Duration: 5.5ms | Allocations: 1358)
+  Rendered microposts/new.html.erb within layouts/application (Duration: 10.0ms | Allocations: 1682)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.0ms | Allocations: 2857)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <%= form_with(model: micropost, local: true) do |form| %>
+  <% if micropost.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(micropost.errors.count, "error") %> prohibited this micropost from being saved:</h2>
+
+      <ul>
+        <% micropost.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :content %>
+    <%= form.text_area :content %>
+  </div>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.collection_select:options_from_collection_for_select(@user, 'id', 'name') %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+):
+1:    <%= form_with(model: micropost, local: true) do |form| %>
+2:      <% if micropost.errors.any? %>
+3:        <div id="error_explanation">
+4:          <h2><%= pluralize(micropost.errors.count, "error") %> prohibited this micropost from being saved:</h2>
+5:    
+6:          <ul>
+7:            <% micropost.errors.full_messages.each do |message| %>
+8:              <li><%= message %></li>
+9:            <% end %>
+10:          </ul>
+11:        </div>
+12:      <% end %>
+13:    
+14:      <div class="field">
+15:        <%= form.label :content %>
+16:        <%= form.text_area :content %>
+17:      </div>
+18:    
+19:      <div class="field">
+20:        <%= form.label :user_id %>
+21:        <%= form.collection_select:options_from_collection_for_select(@user, 'id', 'name') %>
+22:      </div>
+23:    
+24:      <div class="actions">
+25:        <%= form.submit %>
+26:      </div>
+27:    <% end %>
+  
+app/views/microposts/_form.html.erb:21: syntax error, unexpected '(', expecting ')'
+app/views/microposts/_form.html.erb:21: syntax error, unexpected ',', expecting '.' or &. or :: or '['
+app/views/microposts/_form.html.erb:21: syntax error, unexpected ')', expecting end
+app/views/microposts/_form.html.erb:29: syntax error, unexpected end, expecting end-of-input
+app/views/microposts/_form.html.erb:21: syntax error, unexpected '(', expecting ')'
+app/views/microposts/_form.html.erb:21: syntax error, unexpected ',', expecting '.' or &. or :: or '['
+app/views/microposts/_form.html.erb:21: syntax error, unexpected ')', expecting end
+app/views/microposts/_form.html.erb:29: syntax error, unexpected end, expecting end-of-input
+app/views/microposts/_form.html.erb:21: syntax error, unexpected '(', expecting ')'
+app/views/microposts/_form.html.erb:21: syntax error, unexpected ',', expecting '.' or &. or :: or '['
+app/views/microposts/_form.html.erb:21: syntax error, unexpected ')', expecting end
+app/views/microposts/_form.html.erb:29: syntax error, unexpected end, expecting end-of-input
+app/views/microposts/_form.html.erb:21: syntax error, unexpected '(', expecting ')'
+app/views/microposts/_form.html.erb:21: syntax error, unexpected ',', expecting '.' or &. or :: or '['
+app/views/microposts/_form.html.erb:21: syntax error, unexpected ')', expecting end
+app/views/microposts/_form.html.erb:29: syntax error, unexpected end, expecting end-of-input
+app/views/microposts/_form.html.erb:21: syntax error, unexpected '(', expecting ')'
+app/views/microposts/_form.html.erb:21: syntax error, unexpected ',', expecting '.' or &. or :: or '['
+app/views/microposts/_form.html.erb:21: syntax error, unexpected ')', expecting end
+app/views/microposts/_form.html.erb:29: syntax error, unexpected end, expecting end-of-input
+app/views/microposts/_form.html.erb:21: syntax error, unexpected '(', expecting ')'
+app/views/microposts/_form.html.erb:21: syntax error, unexpected ',', expecting '.' or &. or :: or '['
+app/views/microposts/_form.html.erb:21: syntax error, unexpected ')', expecting end
+app/views/microposts/_form.html.erb:29: syntax error, unexpected end, expecting end-of-input
+app/views/microposts/new.html.erb:3
+Started GET "/microposts/new" for ::1 at 2019-09-30 12:16:05 +0700
+Processing by MicropostsController#new as HTML
+  Rendering microposts/new.html.erb within layouts/application
+  Rendered microposts/_form.html.erb (Duration: 5.9ms | Allocations: 1358)
+  Rendered microposts/new.html.erb within layouts/application (Duration: 9.3ms | Allocations: 1682)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.0ms | Allocations: 2857)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <%= form_with(model: micropost, local: true) do |form| %>
+  <% if micropost.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(micropost.errors.count, "error") %> prohibited this micropost from being saved:</h2>
+
+      <ul>
+        <% micropost.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :content %>
+    <%= form.text_area :content %>
+  </div>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.collection_select:options_from_collection_for_select(@micropost, 'id_user', 'name') %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+):
+1:    <%= form_with(model: micropost, local: true) do |form| %>
+2:      <% if micropost.errors.any? %>
+3:        <div id="error_explanation">
+4:          <h2><%= pluralize(micropost.errors.count, "error") %> prohibited this micropost from being saved:</h2>
+5:    
+6:          <ul>
+7:            <% micropost.errors.full_messages.each do |message| %>
+8:              <li><%= message %></li>
+9:            <% end %>
+10:          </ul>
+11:        </div>
+12:      <% end %>
+13:    
+14:      <div class="field">
+15:        <%= form.label :content %>
+16:        <%= form.text_area :content %>
+17:      </div>
+18:    
+19:      <div class="field">
+20:        <%= form.label :user_id %>
+21:        <%= form.collection_select:options_from_collection_for_select(@micropost, 'id_user', 'name') %>
+22:      </div>
+23:    
+24:      <div class="actions">
+25:        <%= form.submit %>
+26:      </div>
+27:    <% end %>
+  
+app/views/microposts/_form.html.erb:21: syntax error, unexpected '(', expecting ')'
+app/views/microposts/_form.html.erb:21: syntax error, unexpected ',', expecting '.' or &. or :: or '['
+app/views/microposts/_form.html.erb:21: syntax error, unexpected ')', expecting end
+app/views/microposts/_form.html.erb:29: syntax error, unexpected end, expecting end-of-input
+app/views/microposts/_form.html.erb:21: syntax error, unexpected '(', expecting ')'
+app/views/microposts/_form.html.erb:21: syntax error, unexpected ',', expecting '.' or &. or :: or '['
+app/views/microposts/_form.html.erb:21: syntax error, unexpected ')', expecting end
+app/views/microposts/_form.html.erb:29: syntax error, unexpected end, expecting end-of-input
+app/views/microposts/_form.html.erb:21: syntax error, unexpected '(', expecting ')'
+app/views/microposts/_form.html.erb:21: syntax error, unexpected ',', expecting '.' or &. or :: or '['
+app/views/microposts/_form.html.erb:21: syntax error, unexpected ')', expecting end
+app/views/microposts/_form.html.erb:29: syntax error, unexpected end, expecting end-of-input
+app/views/microposts/_form.html.erb:21: syntax error, unexpected '(', expecting ')'
+app/views/microposts/_form.html.erb:21: syntax error, unexpected ',', expecting '.' or &. or :: or '['
+app/views/microposts/_form.html.erb:21: syntax error, unexpected ')', expecting end
+app/views/microposts/_form.html.erb:29: syntax error, unexpected end, expecting end-of-input
+app/views/microposts/_form.html.erb:21: syntax error, unexpected '(', expecting ')'
+app/views/microposts/_form.html.erb:21: syntax error, unexpected ',', expecting '.' or &. or :: or '['
+app/views/microposts/_form.html.erb:21: syntax error, unexpected ')', expecting end
+app/views/microposts/_form.html.erb:29: syntax error, unexpected end, expecting end-of-input
+app/views/microposts/_form.html.erb:21: syntax error, unexpected '(', expecting ')'
+app/views/microposts/_form.html.erb:21: syntax error, unexpected ',', expecting '.' or &. or :: or '['
+app/views/microposts/_form.html.erb:21: syntax error, unexpected ')', expecting end
+app/views/microposts/_form.html.erb:29: syntax error, unexpected end, expecting end-of-input
+app/views/microposts/new.html.erb:3
+Started POST "/__web_console/repl_sessions/6badc0a019486dad01027c97f348d848/trace" for ::1 at 2019-09-30 12:16:11 +0700
+Started POST "/__web_console/repl_sessions/6badc0a019486dad01027c97f348d848/trace" for ::1 at 2019-09-30 12:16:13 +0700
+Started GET "/" for ::1 at 2019-12-22 17:05:39 +0700
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 0.0ms | Allocations: 4506)
+
+
+  
+NameError (uninitialized constant #<Class:0x000055a085d8a790>::FILL_IN):
+  
+app/models/user.rb:3:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+app/controllers/users_controller.rb:7:in `index'
+Started POST "/__web_console/repl_sessions/e8ff583c423a474828f5e64615c4f22e/trace" for ::1 at 2019-12-22 17:06:08 +0700
+Started POST "/__web_console/repl_sessions/e8ff583c423a474828f5e64615c4f22e/trace" for ::1 at 2019-12-22 17:06:09 +0700
+Started POST "/__web_console/repl_sessions/e8ff583c423a474828f5e64615c4f22e/trace" for ::1 at 2019-12-22 17:06:10 +0700
+Started POST "/__web_console/repl_sessions/e8ff583c423a474828f5e64615c4f22e/trace" for ::1 at 2019-12-22 17:06:12 +0700
+Started POST "/__web_console/repl_sessions/e8ff583c423a474828f5e64615c4f22e/trace" for ::1 at 2019-12-22 17:06:13 +0700
+Started POST "/__web_console/repl_sessions/e8ff583c423a474828f5e64615c4f22e/trace" for ::1 at 2019-12-22 17:06:14 +0700
+Started GET "/" for ::1 at 2019-12-22 17:45:52 +0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms | Allocations: 3664)
+
+
+  
+NameError (uninitialized constant #<Class:0x000055a086c55900>::FILL_IN):
+  
+app/models/user.rb:3:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+app/controllers/users_controller.rb:7:in `index'
+Started GET "/" for ::1 at 2019-12-22 17:45:54 +0700
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:15
+  Rendered users/index.html.erb within layouts/application (Duration: 8.1ms | Allocations: 4140)
+Completed 200 OK in 1127ms (Views: 1124.6ms | ActiveRecord: 0.9ms | Allocations: 1249686)
+
+
+Started GET "/users/2" for ::1 at 2019-12-22 17:49:53 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:67:in `set_user'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 1.0ms | Allocations: 283)
+Completed 200 OK in 22ms (Views: 6.3ms | ActiveRecord: 0.3ms | Allocations: 9390)
+
+
+Started GET "/users" for ::1 at 2019-12-22 17:49:57 +0700
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:15
+  Rendered users/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 740)
+Completed 200 OK in 32ms (Views: 29.6ms | ActiveRecord: 0.3ms | Allocations: 6840)
+
+
+Started GET "/microposts" for ::1 at 2019-12-22 17:52:22 +0700
+Processing by MicropostsController#index as HTML
+  Rendering microposts/index.html.erb within layouts/application
+  [1m[36mMicropost Load (0.4ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts"[0m
+  ↳ app/views/microposts/index.html.erb:15
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/microposts/index.html.erb:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/microposts/index.html.erb:18
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/microposts/index.html.erb:18
+  Rendered microposts/index.html.erb within layouts/application (Duration: 23.3ms | Allocations: 9848)
+Completed 200 OK in 38ms (Views: 29.9ms | ActiveRecord: 1.0ms | Allocations: 17765)
+
+
+Started GET "/microposts/1" for ::1 at 2019-12-22 17:52:25 +0700
+Processing by MicropostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMicropost Load (0.9ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts" WHERE "microposts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/microposts_controller.rb:67:in `set_micropost'
+  Rendering microposts/show.html.erb within layouts/application
+  Rendered microposts/show.html.erb within layouts/application (Duration: 2.9ms | Allocations: 273)
+Completed 200 OK in 42ms (Views: 33.4ms | ActiveRecord: 0.9ms | Allocations: 7118)
+
+
+Started GET "/microposts" for ::1 at 2019-12-22 17:52:27 +0700
+Processing by MicropostsController#index as HTML
+  Rendering microposts/index.html.erb within layouts/application
+  [1m[36mMicropost Load (0.6ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts"[0m
+  ↳ app/views/microposts/index.html.erb:15
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/microposts/index.html.erb:18
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/microposts/index.html.erb:18
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/microposts/index.html.erb:18
+  Rendered microposts/index.html.erb within layouts/application (Duration: 29.3ms | Allocations: 2892)
+Completed 200 OK in 69ms (Views: 64.1ms | ActiveRecord: 1.7ms | Allocations: 8988)
+
+
+Started GET "/" for ::1 at 2019-12-22 17:53:32 +0700
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:15
+  Rendered users/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 743)
+Completed 200 OK in 14ms (Views: 12.4ms | ActiveRecord: 0.2ms | Allocations: 6837)
+
+
+Started GET "/users/2" for ::1 at 2019-12-22 17:53:35 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:67:in `set_user'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.8ms | Allocations: 93)
+Completed 200 OK in 23ms (Views: 19.5ms | ActiveRecord: 0.3ms | Allocations: 6688)
+
+
+Started GET "/users" for ::1 at 2019-12-22 17:53:37 +0700
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:15
+  Rendered users/index.html.erb within layouts/application (Duration: 5.4ms | Allocations: 734)
+Completed 200 OK in 44ms (Views: 41.6ms | ActiveRecord: 0.4ms | Allocations: 6829)
+
+
+Started GET "/users" for ::1 at 2019-12-22 17:55:20 +0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms | Allocations: 3950)
+
+
+  
+NameError (uninitialized constant #<Class:0x00007f839ae68280>::FILL_IN):
+  
+app/models/user.rb:3:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+app/controllers/users_controller.rb:7:in `index'
+Started POST "/__web_console/repl_sessions/31613cf48e4b2de617367cec3987ee2c/trace" for ::1 at 2019-12-22 17:55:30 +0700
+Started POST "/__web_console/repl_sessions/31613cf48e4b2de617367cec3987ee2c/trace" for ::1 at 2019-12-22 17:55:31 +0700
+Started POST "/__web_console/repl_sessions/31613cf48e4b2de617367cec3987ee2c/trace" for ::1 at 2019-12-22 17:55:32 +0700
+Started POST "/__web_console/repl_sessions/31613cf48e4b2de617367cec3987ee2c/trace" for ::1 at 2019-12-22 17:55:36 +0700
+Started GET "/users" for ::1 at 2019-12-22 17:56:23 +0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms | Allocations: 3928)
+
+
+  
+NameError (uninitialized constant #<Class:0x00007f839aed6370>::FILL_IN):
+  
+app/models/user.rb:3:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+app/controllers/users_controller.rb:7:in `index'
+Started GET "/users" for ::1 at 2019-12-22 17:56:24 +0700
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:15
+  Rendered users/index.html.erb within layouts/application (Duration: 8.4ms | Allocations: 3605)
+Completed 200 OK in 16ms (Views: 13.9ms | ActiveRecord: 0.9ms | Allocations: 9878)
+
+
+Started GET "/microposts" for ::1 at 2019-12-22 17:56:56 +0700
+Processing by MicropostsController#index as HTML
+  Rendering microposts/index.html.erb within layouts/application
+  [1m[36mMicropost Load (0.2ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts"[0m
+  ↳ app/views/microposts/index.html.erb:15
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/microposts/index.html.erb:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/microposts/index.html.erb:18
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/microposts/index.html.erb:18
+  Rendered microposts/index.html.erb within layouts/application (Duration: 11.2ms | Allocations: 6708)
+Completed 200 OK in 21ms (Views: 17.7ms | ActiveRecord: 0.9ms | Allocations: 13440)
+
+
+Started GET "/microposts/new" for ::1 at 2019-12-22 17:56:58 +0700
+Processing by MicropostsController#new as HTML
+  Rendering microposts/new.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/microposts/_form.html.erb:21
+  Rendered microposts/_form.html.erb (Duration: 59.1ms | Allocations: 5828)
+  Rendered microposts/new.html.erb within layouts/application (Duration: 62.7ms | Allocations: 6174)
+Completed 200 OK in 87ms (Views: 83.5ms | ActiveRecord: 0.4ms | Allocations: 12425)
+
+
+Started GET "/microposts" for ::1 at 2019-12-22 17:57:02 +0700
+Processing by MicropostsController#index as HTML
+  Rendering microposts/index.html.erb within layouts/application
+  [1m[36mMicropost Load (0.5ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts"[0m
+  ↳ app/views/microposts/index.html.erb:15
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/microposts/index.html.erb:18
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/microposts/index.html.erb:18
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/microposts/index.html.erb:18
+  Rendered microposts/index.html.erb within layouts/application (Duration: 25.1ms | Allocations: 2893)
+Completed 200 OK in 59ms (Views: 54.5ms | ActiveRecord: 1.2ms | Allocations: 8992)
+
+
